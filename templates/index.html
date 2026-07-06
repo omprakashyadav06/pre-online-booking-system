@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<form action="/book" method="POST">
+
+    <h2>📅 Book Your Slot</h2>
+
+    <input type="text" name="name" placeholder="👤 Enter Name"><br>
+
+    <label>🛠 Service</label><br>
+    <select name="service">
+        <option value="Doctor">👨‍⚕️ Doctor</option>
+        <option value="Salon">💇 Salon</option>
+        <option value="Meeting">🏢 Meeting Room</option>
+    </select><br>
+
+    <input type="text" name="location" placeholder="📍 Enter Location"><br>
+
+    <label>🏬 Branch</label><br>
+    <select name="branch">
+        <option value="Bangalore">📍 Bangalore</option>
+        <option value="Hyderabad">📍 Hyderabad</option>
+        <option value="Chennai">📍 Chennai</option>
+    </select><br>
+
+    <input type="date" name="date"><br>
+
+    <label>⏰ Time Slot</label><br>
+    <select name="time">
+        <option>10:00 AM</option>
+        <option>11:00 AM</option>
+        <option>12:00 PM</option>
+        <option>02:00 PM</option>
+    </select><br>
+
+    <input type="text" name="purpose" placeholder="📝 Purpose"><br>
+
+    <button type="submit">🚀 Book Now</button>
+</form>
+
+<br>
+<a href="/login">🔐 Admin Login</a>
+{% endblock %}
