@@ -1,43 +1,75 @@
+
 {% extends "layout.html" %}
 
 {% block content %}
+
 <form action="/book" method="POST">
 
     <h2>📅 Book Your Slot</h2>
 
-    <input type="text" name="name" placeholder="👤 Enter Name"><br>
+    <label for="name">Your Name</label>
+    <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Enter your full name"
+        required
+    >
 
-    <label>🛠 Service</label><br>
-    <select name="service">
-        <option value="Doctor">👨‍⚕️ Doctor</option>
-        <option value="Salon">💇 Salon</option>
-        <option value="Meeting">🏢 Meeting Room</option>
-    </select><br>
+    <label for="service">Select Service</label>
+    <select id="service" name="service" required>
+        <option value="">Choose a service</option>
+        <option value="Doctor">Doctor</option>
+        <option value="Salon">Salon</option>
+        <option value="Meeting">Meeting Room</option>
+    </select>
 
-    <input type="text" name="location" placeholder="📍 Enter Location"><br>
+    <label for="location">Location</label>
+    <input
+        type="text"
+        id="location"
+        name="location"
+        placeholder="Enter your location"
+        required
+    >
 
-    <label>🏬 Branch</label><br>
-    <select name="branch">
-        <option value="Bangalore">📍 Bangalore</option>
-        <option value="Hyderabad">📍 Hyderabad</option>
-        <option value="Chennai">📍 Chennai</option>
-    </select><br>
+    <label for="branch">Select Branch</label>
+    <select id="branch" name="branch" required>
+        <option value="">Choose a branch</option>
+        <option value="Bangalore">Bangalore</option>
+        <option value="Hyderabad">Hyderabad</option>
+        <option value="Chennai">Chennai</option>
+    </select>
 
-    <input type="date" name="date"><br>
+    <label for="date">Booking Date</label>
+    <input
+        type="date"
+        id="date"
+        name="date"
+        min="{{ today }}"
+        required
+    >
 
-    <label>⏰ Time Slot</label><br>
-    <select name="time">
-        <option>10:00 AM</option>
-        <option>11:00 AM</option>
-        <option>12:00 PM</option>
-        <option>02:00 PM</option>
-    </select><br>
+    <label for="time">Select Time Slot</label>
+    <select id="time" name="time" required>
+        <option value="">Choose a time</option>
+        <option value="10:00 AM">10:00 AM</option>
+        <option value="11:00 AM">11:00 AM</option>
+        <option value="12:00 PM">12:00 PM</option>
+        <option value="02:00 PM">02:00 PM</option>
+    </select>
 
-    <input type="text" name="purpose" placeholder="📝 Purpose"><br>
+    <label for="purpose">Purpose of Booking</label>
+    <input
+        type="text"
+        id="purpose"
+        name="purpose"
+        placeholder="Enter booking purpose"
+        required
+    >
 
     <button type="submit">🚀 Book Now</button>
+
 </form>
 
-<br>
-<a href="/login">🔐 Admin Login</a>
 {% endblock %}

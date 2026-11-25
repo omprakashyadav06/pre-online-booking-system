@@ -1,3 +1,9 @@
+
+/* ---------- GLOBAL SETTINGS ---------- */
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #667eea, #764ba2, #6dd5ed);
@@ -6,71 +12,139 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
 }
 
-/* Animated Gradient */
+/* ---------- BACKGROUND ANIMATION ---------- */
 @keyframes gradientBG {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-/* Title */
+/* ---------- HEADER ---------- */
+header {
+    background: rgba(20, 25, 60, 0.85);
+    padding: 15px;
+}
+
 h1 {
     color: white;
-    padding: 20px;
+    margin: 10px;
     font-size: 32px;
 }
 
-/* Form Box */
+/* ---------- NAVIGATION ---------- */
+nav {
+    margin: 15px 0 5px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 15px;
+    padding: 10px;
+}
+
+nav a:hover {
+    color: #ffd166;
+}
+
+/* ---------- MAIN CONTENT ---------- */
+main {
+    padding: 30px 15px;
+}
+
+/* ---------- BOOKING FORM ---------- */
 form {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.96);
     padding: 30px;
-    margin-top: 40px;
+    margin: 20px auto;
     display: inline-block;
+    width: 100%;
+    max-width: 420px;
     border-radius: 15px;
-    box-shadow: 0px 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
     animation: fadeIn 1s ease-in-out;
 }
 
-/* Form heading */
 form h2 {
-    margin-bottom: 15px;
+    color: #333;
+    margin-bottom: 20px;
 }
 
-/* Inputs */
+/* ---------- INPUTS AND DROPDOWNS ---------- */
 input, select {
-    width: 260px;
-    padding: 10px;
-    margin: 10px;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
     border-radius: 8px;
     border: 1px solid #ccc;
+    font-size: 15px;
 }
 
-/* Button */
+input:focus, select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 5px rgba(102, 126, 234, 0.5);
+}
+
+/* ---------- BUTTON ---------- */
 button {
     background: linear-gradient(to right, #ff7e5f, #feb47b);
     color: white;
-    padding: 12px 20px;
+    padding: 13px 25px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: 0.3s;
 }
 
 button:hover {
     background: linear-gradient(to right, #ff512f, #dd2476);
+    transform: translateY(-2px);
 }
 
-/* Link */
+/* ---------- LINKS ---------- */
 a {
-    color: white;
     font-weight: bold;
     text-decoration: none;
 }
 
-/* Animation */
+/* ---------- FOOTER ---------- */
+footer {
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* ---------- FADE ANIMATION ---------- */
 @keyframes fadeIn {
-    from {opacity: 0; transform: translateY(20px);}
-    to {opacity: 1; transform: translateY(0);}
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- MOBILE RESPONSIVENESS ---------- */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    nav a {
+        margin: 0 5px;
+    }
 }

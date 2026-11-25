@@ -1,15 +1,34 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Booking System</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Booking System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
 
-<h1>🚀 Smart Booking System</h1>
-<hr>
+    <header>
+        <h1>🚀 Smart Booking System</h1>
 
-{% block content %}{% endblock %}
+        <nav>
+            <a href="/">Home</a>
+            <a href="/login">Admin Login</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>Smart Booking System | Built with Python Flask</p>
+    </footer>
 
 </body>
 </html>
