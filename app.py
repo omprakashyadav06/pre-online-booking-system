@@ -772,7 +772,13 @@ def get_all_bookings():
 
     finally:
         conn.close()
-
+# ---------- HEALTH CHECK API ----------
+@app.route('/api/health', methods=['GET'])
+def health_check():
+    return jsonify({
+        "status": "healthy",
+        "message": "Booking API is running"
+    }), 200
 
 # ---------- RUN ----------
 if __name__ == "__main__":
