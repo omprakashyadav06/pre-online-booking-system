@@ -27,3 +27,8 @@ jobs:
 
       - name: Check Python syntax
         run: python -m compileall -q app.py
+
+      - name: Run automated tests
+        run: python -m unittest discover -s tests -v
+
+
